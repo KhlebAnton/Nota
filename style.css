@@ -319,19 +319,14 @@ body {
     width: 90%;
     border-radius: 25px;
     outline: 800px #00000080 solid;
-    animation: openscan 1s linear;
+    animation: fadeIn 1s linear;
     
 }
 .scanning.hidden {
     display: none;
     opacity: 1;
 }
-@keyframes openscan {
-    from {
-        opacity: 0;
-        outline: 0px #00000080 solid;;
-    }
-}
+
 .check_screen {
     width: 100%;
     height: 100%;
@@ -605,4 +600,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     
+}
+.scanning h1 {
+    animation: fadeIn 1s;
 }
