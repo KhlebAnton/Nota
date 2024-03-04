@@ -214,7 +214,11 @@ function setColor(r,g,b) {
     iconColor.style.backgroundImage = `url(${icon_url})`;
 
 }
-
+//title
+const titleIcon = document.getElementById('title_icon')
+function setTitle(title) {
+    titleIcon.textContent = title;
+}
 //click 
 
 function authorClick(author) {
