@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="instruction" class="instruction">
+        <div class="instr_item">
+            <div class="image_instr">
+                <div class="img_inst">
+                    <div class="image_1"></div>
+                </div>
+                <div class="img_inst hidden">
+                    <div class="image_2">
+                        <div class="point_anim">
+                            <div class="point">
+                                <div class="point_icon"></div>
+                            </div>
+                            <div class="bubbls">
+                                <div class="bubbl small"></div>
+                                <div class="bubbl middle"></div>
+                                <div class="bubbl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="img_inst hidden">
+                    <div class="image_3"></div>
+                </div>
+            </div>
+            <div class="content_instr">
+                <div class="desc_container">
+                    <div class="description_instr ">
+                        <h1>Просканируйте<br> пространство</h1>
+                        <p>Повернитесь и направьте камеру на логотип ноты возле информационной стойки.</p>
+                    </div>
+                    <div class="description_instr hidden">
+                        <h1>Следуйте <br>маршруту</h1>
+                        <p>Следуйте указателям на экране, чтобы добраться до нужной Вам книги.</p>
+                    </div>
+                    <div class="description_instr hidden">
+                        <h1>Поиск новой<br> книги</h1>
+                        <p>Для поиска новой книги
+                            повторите пердыдущие шаги.</p>
+                    </div>
+                </div>
+
+                <div class="footer_instr">
+                    <div class="slider_bar">
+                        <div class="slide activ"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                    </div>
+                    <div id="btn_instr_next" class="btn btn_next" ontouchstart></div>
+                    <div id="btn_instr_close" class="btn btn_close hidden" ontouchstart></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="scan" class="scanning hidden">
+        <div class="scan_window"></div>
+        <button onclick="scanning()"> scanning ok</button>
+        <h1>Повернитесь и направьте <br>камеру на логотип ноты возле информационной стойки</h1>
+    </div>
+    <div id="check" class="check_screen hidden">
+        <div class="check"></div>
+    </div>
+
+
+    <div id="header_road" class="header_road hidden">
+        <div class="wrapper">
+            <div id="icon" class="color_icon" style="background-image: url(img/icons/__labirint.svg); background-color: rgb(88, 86, 214);"></div>
+            <div class="desc_icon">
+                <h2 id="title_icon">Кавказкий пленик</h2>
+                <p id="author_icon">A.С. Пушкин</p>
+            </div>
+        </div>
+        <div class="close_header" ontouchstart></div>
+    </div>
+
+    <div id="footer_road" class="footer_road hidden">
+        <div class="info" onclick="showPopup('info_popup')"></div>
+        <div class="telegram"></div>
+    </div>
+    
+    <div id="info_popup" class="popup hidden">
+        <p class="desc">Данное приложение является навигатором в дополненной реальности по книжному фонду библиотеки “Нота”</p>
+        <div class="logo_nota">
+            <div class="logo_img"></div>
+            <p class="logo_desc">Разработано при участии ЦБС 
+                Красногвардейского района,
+                БКЦ «НОТА»</p>
+        </div>
+        <div class="btn_group">
+            <div class="btn_repeat" onclick="repeatInstr()" ontouchstart>Повторить инструкцию</div>
+            <div class="btn_telegram" ontouchstart>Телеграм канал </div>
+        </div>
+    </div>
+
+    <div id="click_popup" class="popup hidden">
+        
+        <h1>Текст</h1>
+
+        <div class="btn_group">
+            <div class="btn_repeat" onclick="hidePopup('click_popup')" ontouchstart>Продолжить</div>
+        </div>
+    </div>
+
+
+
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
