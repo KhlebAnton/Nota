@@ -318,9 +318,19 @@ body {
     height: 60%;
     width: 90%;
     border-radius: 25px;
-    outline: 1000px #00000080 solid;
+    outline: 800px #00000080 solid;
+    animation: openscan 1s linear;
     
-    
+}
+.scanning.hidden {
+    display: none;
+    opacity: 1;
+}
+@keyframes openscan {
+    from {
+        opacity: 0;
+        outline: 0px #00000080 solid;;
+    }
 }
 .check_screen {
     width: 100%;
