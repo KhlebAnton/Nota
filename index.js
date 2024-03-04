@@ -180,21 +180,21 @@ btnInstr.addEventListener('click', () => {
 const iconColor = document.getElementById('icon')
 ///color icon
 const colorToIcon = {
-    '88, 86, 214': 'img/icons/__labirint.svg',
-    '237, 25, 216': 'img/icons/__kapella.svg',
-    '255, 149, 0': 'img/icons/__zal-iskusstv.svg',
-    '223, 179, 4': 'img/icons/__komnata-kniga.svg',
-    '52, 199, 89': 'img/icons/__perever-room.svg',
-    '0, 199, 190': 'img/icons/__sad.svg',
-    '48, 176, 199': 'img/icons/__kvorking.svg',
-    '50, 173, 230': 'img/icons/__tonel.svg',
-    '0, 122, 255': 'img/icons/__office.svg',
-    '88, 86, 214': 'img/icons/__big zal.svg',
-    '175, 82, 222': 'img/icons/__kids.svg',
-    '255, 45, 85': 'img/icons/__sound.svg',
-    '176, 149, 255': 'img/icons/__color.svg',
-    '239, 139, 255': 'img/icons/__sreda sveta.svg',
-    '255, 114, 114': 'img/icons/__studio.svg'
+    '88, 86, 214': 'img/icons/labirint.svg',
+    '237, 25, 216': 'img/icons/kapella.svg',
+    '255, 149, 0': 'img/icons/zal-iskusstv.svg',
+    '223, 179, 4': 'img/icons/komnata-kniga.svg',
+    '52, 199, 89': 'img/icons/perever-room.svg',
+    '0, 199, 190': 'img/icons/sad.svg',
+    '48, 176, 199': 'img/icons/kvorking.svg',
+    '50, 173, 230': 'img/icons/tonel.svg',
+    '0, 122, 255': 'img/icons/office.svg',
+    '88, 86, 214': 'img/icons/big zal.svg',
+    '175, 82, 222': 'img/icons/kids.svg',
+    '255, 45, 85': 'img/icons/sound.svg',
+    '176, 149, 255': 'img/icons/color.svg',
+    '239, 139, 255': 'img/icons/sreda sveta.svg',
+    '255, 114, 114': 'img/icons/studio.svg'
   };
 
 function findIconByColor(color) {
