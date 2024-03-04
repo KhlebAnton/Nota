@@ -598,7 +598,7 @@ body {
     display: block;
     width: 24px;
     height: 24px;
-    background: url(img/__telegram.svg);
+    background: url(img/telegram.svg);
 }
 #click_popup {
     display: flex;
