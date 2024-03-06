@@ -65,7 +65,6 @@
     </div>
     <div id="scan" class="scanning hidden">
         <div class="scan_window"></div>
-        <button onclick="scanning()"> scanning ok</button>
         <h1>Повернитесь и направьте <br>камеру на логотип ноты возле информационной стойки</h1>
     </div>
     <div id="check" class="check_screen hidden">
@@ -78,7 +77,6 @@
             <div id="icon" class="color_icon" style="background-image: url(img/icons/labirint.svg); background-color: rgb(88, 86, 214);"></div>
             <div class="desc_icon">
                 <h2 id="title_icon">Кавказкий пленик</h2>
-                <p id="author_icon">A.С. Пушкин</p>
             </div>
         </div>
         <div class="close_header" ontouchstart></div>
@@ -86,7 +84,7 @@
 
     <div id="footer_road" class="footer_road hidden">
         <div class="info" onclick="showPopup('info_popup')" ontouchstar></div>
-        <div class="telegram" ontouchstar></div>
+        <div class="telegram" onclick="openTG()" ontouchstar></div>
     </div>
     
     <div id="info_popup" class="popup hidden">
@@ -99,7 +97,7 @@
         </div>
         <div class="btn_group">
             <div class="btn_repeat" onclick="repeatInstr()" ontouchstart>Повторить инструкцию</div>
-            <div class="btn_telegram" ontouchstart>Телеграм канал </div>
+            <div class="btn_telegram" onclick="openTG()" ontouchstart>Телеграм канал </div>
         </div>
     </div>
 

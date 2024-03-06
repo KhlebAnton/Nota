@@ -60,6 +60,7 @@ body {
     animation: animInstrIn 0.6s ;
     position: fixed;
     width: 100%;
+    z-index: 3;
 
 }
 .instruction.hidden {

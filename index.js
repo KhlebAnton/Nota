@@ -79,7 +79,10 @@ function showInstr() {
 }
 //show/hide screen scanning
 function showScan() {
-    scan.classList.remove('hidden')
+    if(scanningId = true) {
+       scan.classList.remove('hidden') 
+    }
+    
 }
 function hideScan() {
     scan.classList.add('hidden')
@@ -101,6 +104,7 @@ function hideFooter() {
 
 // scanning ok 
 function scanning() {
+    scanningId = true;
     hideScan();
     check.classList.remove('hidden');
     setTimeout(() => {
@@ -223,4 +227,8 @@ function setTitle(title) {
 
 function authorClick(author) {
     showPopup('click_popup');
+}
+
+function openTG() {
+    // телеграм
 }
