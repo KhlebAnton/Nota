@@ -617,12 +617,14 @@ body {
     top: calc(50% - 30px);
     border: 1px solid #FFFFFF;
     z-index: 2;
+    backdrop-filter: blur(4px);
 }
 .arrow_icon {
     background: url('img/corner.svg') 50% / cover no-repeat;
     width: 17px;
     height: 28px;
     position: absolute;
+    z-index: 1;
 }
 .arrow_icon.right_arrow {
     right: -10px;  
