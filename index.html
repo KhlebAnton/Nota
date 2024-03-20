@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="instruction" class="instruction">
+    <div id="instruction" class="instruction ">
         <div class="instr_item">
             <div class="image_instr">
                 <div class="img_inst">
@@ -74,7 +74,8 @@
 
     <div id="header_road" class="header_road hidden">
         <div class="wrapper">
-            <div id="icon" class="color_icon" style="background-image: url(img/icons/labirint.svg); background-color: rgb(88, 86, 214);"></div>
+            <div id="icon" class="color_icon"
+                style="background-image: url(img/icons/labirint.svg); background-color: rgb(88, 86, 214);"></div>
             <div class="desc_icon">
                 <h2 id="title_icon">Кавказкий пленик</h2>
             </div>
@@ -86,12 +87,13 @@
         <div class="info" onclick="showPopup('info_popup')" ontouchstar></div>
         <div class="telegram" onclick="openTG()" ontouchstar></div>
     </div>
-    
+
     <div id="info_popup" class="popup hidden">
-        <p class="desc">Данное приложение является навигатором в дополненной реальности по книжному фонду библиотеки “Нота”</p>
+        <p class="desc">Данное приложение является навигатором в дополненной реальности по книжному фонду библиотеки
+            “Нота”</p>
         <div class="logo_nota">
             <div class="logo_img"></div>
-            <p class="logo_desc">Разработано при участии ЦБС 
+            <p class="logo_desc">Разработано при участии ЦБС
                 Красногвардейского района,
                 БКЦ «НОТА»</p>
         </div>
@@ -101,18 +103,33 @@
         </div>
     </div>
 
+
+
     <div id="click_popup" class="popup hidden">
-        
+
         <h1>Текст</h1>
 
         <div class="btn_group">
             <div class="btn_repeat" onclick="hidePopup('click_popup')" ontouchstart>Продолжить</div>
         </div>
     </div>
-
-
-
+    <div id="left_icon" class="icon_nav left_icon hidden">
+        <div class="arrow_icon left_arrow"></div>
+        <div class="container_icon_nav">
+            <div class="color_icon_nav" style="background-color: rgb(88, 86, 214);">                    
+            </div>
+        </div>
+    </div>
+    <div id="right_icon" class="icon_nav right_icon hidden">
+        <div class="arrow_icon right_arrow"></div>
+        <div class="container_icon_nav">
+            <div class="color_icon_nav" style="background-color: rgb(88, 86, 214);">                    
+            </div>
+        </div>
+    </div>
     
+
+
     <script src="index.js"></script>
 </body>
 

@@ -180,8 +180,26 @@ btnInstr.addEventListener('click', () => {
     nextDesc();
 })
 
+//show/ hidee icon left/right
+const leftIcon = document.getElementById('left_icon');
+const rightIcon = document.getElementById('right_icon');
 
-const iconColor = document.getElementById('icon')
+function showLeftIcon() {
+    leftIcon.classList.remove('hidden')
+}
+function showRightIcon() {
+    rightIcon.classList.remove('hidden')
+}
+
+function hideLeftIcon() {
+    leftIcon.classList.add('hidden')
+}
+function hideRightIcon() {
+    rightIcon.classList.add('hidden')
+}
+
+const iconColor = document.getElementById('icon');
+
 ///color icon
 const colorToIcon = {
     '88, 86, 214': 'img/icons/labirint.svg',
@@ -193,11 +211,11 @@ const colorToIcon = {
     '48, 176, 199': 'img/icons/kvorking.svg',
     '50, 173, 230': 'img/icons/tonel.svg',
     '0, 122, 255': 'img/icons/office.svg',
-    '88, 86, 214': 'img/icons/big zal.svg',
+    '35, 21, 198': 'img/icons/big-zal.svg',
     '175, 82, 222': 'img/icons/kids.svg',
     '255, 45, 85': 'img/icons/sound.svg',
     '176, 149, 255': 'img/icons/color.svg',
-    '239, 139, 255': 'img/icons/sreda sveta.svg',
+    '239, 139, 255': 'img/icons/sreda-sveta.svg',
     '255, 114, 114': 'img/icons/studio.svg'
   };
 
@@ -210,6 +228,8 @@ function findIconByColor(color) {
   }
 
 function setColor(r,g,b) {
+    leftIcon.querySelector('.color_icon_nav').style.backgroundColor = `rgb(${r},${g},${b})`;
+    rightIcon.querySelector('.color_icon_nav').style.backgroundColor = `rgb(${r},${g},${b})`;
     iconColor.style.backgroundColor = `rgb(${r},${g},${b})`;
     let numColor = +`${r}${g}${b}`;
     
