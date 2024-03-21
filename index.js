@@ -70,6 +70,14 @@ function hidePopup(id) {
     document.getElementById(id).classList.add('hidden')
 }
 
+//show click popup
+function showClickPopup() {
+    document.getElementById('click_popup').classList.remove('hidden')
+}
+function hideClickPopup() {
+    document.getElementById('click_popup').classList.add('hidden')
+}
+
 // hide screen instruction
 function closeInstr() {
     instruction.classList.add('hidden');
@@ -245,9 +253,7 @@ function setTitle(title) {
 }
 //click 
 
-function authorClick(author) {
-    showPopup('click_popup');
-}
+
 
 function openTG() {
     // телеграм
