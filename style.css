@@ -618,6 +618,9 @@ body {
     animation: fadeIn 1s;
 }
 .icon_nav {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
     width: 60px;
     height: 60px;
     border-radius: 110px;
@@ -630,6 +633,9 @@ body {
     border: 1px solid #FFFFFF;
     z-index: 2;
     backdrop-filter: blur(4px);
+}
+.icon_nav.hidden {
+    opacity: 0;
 }
 .arrow_icon {
     background: url('img/corner.svg') 50% / cover no-repeat;
@@ -667,4 +673,27 @@ body {
     height: 100%;
     border-radius: 40px;
     background: url('img/point.svg') 50% / 24px no-repeat;
+}
+
+#quote_popup {
+    height: auto;
+    text-align: center;
+}
+.quote_container {
+    background: rgba(247, 247, 247, 1);
+    min-height: 71px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+
+    font-weight: 700;
+    font-size: 16px;
+}
+.author_quote {
+    margin-bottom: 28px;
+    font-weight: 400;
+    font-size: 16px;
 }

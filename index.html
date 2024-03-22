@@ -38,7 +38,7 @@
                 <div class="desc_container">
                     <div class="description_instr ">
                         <h1>Просканируйте<br> пространство</h1>
-                        <p>Повернитесь и направьте камеру на логотип ноты возле информационной стойки.</p>
+                        <p> Медленно осмотри через камеру пространство вокруг себя.</p>
                     </div>
                     <div class="description_instr hidden">
                         <h1>Следуйте <br>маршруту</h1>
@@ -63,10 +63,7 @@
             </div>
         </div>
     </div>
-    <div id="scan" class="scanning hidden">
-        <div class="scan_window"></div>
-        <h1>Повернитесь и направьте <br>камеру на логотип ноты возле информационной стойки</h1>
-    </div>
+    
     <div id="check" class="check_screen hidden">
         <div class="check"></div>
     </div>
@@ -80,7 +77,7 @@
                 <h2 id="title_icon">Кавказкий пленик</h2>
             </div>
         </div>
-        <div class="close_header" ontouchstart></div>
+        <div class="close_header" ontouchstart onclick="hideHeader()"></div>
     </div>
 
     <div id="footer_road" class="footer_road hidden">
@@ -114,6 +111,19 @@
 
         <div class="btn_group">
             <div class="btn_repeat" onclick="hideClickPopup()" ontouchstart>Продолжить</div>
+        </div>
+    </div>
+    <div id="quote_popup" class="popup hidden">
+        <div id="quote_container" class="quote_container">
+            Бабушка говорит, чай помогает при любых неприятностях
+        </div>
+
+        <div id="author_quote" class="author_quote">
+            “Почему плачет русалка”  Холли Вебб
+        </div>
+
+        <div class="btn_group">
+            <div class="btn_repeat" onclick="hideQuotePopup()" ontouchstart>Продолжить</div>
         </div>
     </div>
     <div id="left_icon" class="icon_nav left_icon hidden">

@@ -1,7 +1,6 @@
 const btnInstr = document.getElementById('btn_instr_next');
 const btnInstrClose = document.getElementById('btn_instr_close');
 const instruction = document.getElementById('instruction');
-const scan = document.getElementById('scan');
 const slideList = document.querySelectorAll('.slide');
 const imageList = document.querySelectorAll('.img_inst');
 const descList = document.querySelectorAll('.description_instr');
@@ -46,16 +45,16 @@ popupList.forEach(popup => {
     });
 
     popup.addEventListener('touchmove', (e) => {
-        if (e.touches.length === 2) return; 
+        if (e.touches.length === 2) return;
 
         touchMovePosition = e.touches[0].clientY;
         swipeDistance = touchMovePosition - touchStartPosition;
 
-        
+
     });
 
     popup.addEventListener('touchend', () => {
-        
+
         if (swipeDistance > 0) {
             popup.classList.add('hidden');
             swipeDistance = null;
@@ -77,7 +76,13 @@ function showClickPopup() {
 function hideClickPopup() {
     document.getElementById('click_popup').classList.add('hidden')
 }
+function showQuotePopup() {
+    document.getElementById('quote_popup').classList.remove('hidden')
+}
 
+function hideQuotePopup() {
+    document.getElementById('quote_popup').classList.add('hidden')
+}
 // hide screen instruction
 function closeInstr() {
     instruction.classList.add('hidden');
@@ -85,19 +90,13 @@ function closeInstr() {
 function showInstr() {
     instruction.classList.remove('hidden');
 }
-//show/hide screen scanning
-function showScan() {
-    if(scanningId = true) {
-       scan.classList.remove('hidden') 
-    }
-    
-}
-function hideScan() {
-    scan.classList.add('hidden')
-}
+
 //show/hide header_road 
 function showHeader() {
-    headRoad.classList.remove('hidden')
+    setTimeout(() => {
+        headRoad.classList.remove('hidden')
+    }, 1000)
+
 }
 function hideHeader() {
     headRoad.classList.add('hidden')
@@ -112,16 +111,15 @@ function hideFooter() {
 
 // scanning ok 
 function scanning() {
-    scanningId = true;
-    hideScan();
-    check.classList.remove('hidden');
-    setTimeout(() => {
-        check.classList.add('hidden');
-        showHeader();
-        showFooter();
-    }, 2000)
-
-
+    if (!scanningId) {
+        scanningId = true;
+        check.classList.remove('hidden');
+        setTimeout(() => {
+            check.classList.add('hidden');
+            showHeader();
+            showFooter();
+        }, 2000)
+    }
 }
 
 //instruction slider
@@ -140,17 +138,13 @@ function nextSlide() {
         btnInstr.classList.add('hidden');
         btnInstrClose.classList.remove('hidden')
         // close instr and open scanning
-        
+
         btnInstrClose.addEventListener('click', () => {
             closeInstr();
-            if(!scanningId) {
-                showScan();
-                scanningId = true;
-            } else {
+            if(scanningId) {
                 showHeader();
                 showFooter();
             }
-            
         })
 
     }
@@ -193,10 +187,14 @@ const leftIcon = document.getElementById('left_icon');
 const rightIcon = document.getElementById('right_icon');
 
 function showLeftIcon() {
-    leftIcon.classList.remove('hidden')
+    setTimeout(() => {
+        leftIcon.classList.remove('hidden')
+    }, 400);
 }
 function showRightIcon() {
-    rightIcon.classList.remove('hidden')
+    setTimeout(() => {
+        rightIcon.classList.remove('hidden');
+    }, 400);
 }
 
 function hideLeftIcon() {
@@ -225,7 +223,7 @@ const colorToIcon = {
     '176, 149, 255': 'img/icons/color.svg',
     '239, 139, 255': 'img/icons/sreda-sveta.svg',
     '255, 114, 114': 'img/icons/studio.svg'
-  };
+};
 
 function findIconByColor(color) {
     const [r, g, b] = color.split(', ').map(Number);
@@ -233,16 +231,16 @@ function findIconByColor(color) {
     console.log(iconPath)
     return iconPath;
 
-  }
+}
 
-function setColor(r,g,b) {
+function setColor(r, g, b) {
     leftIcon.querySelector('.color_icon_nav').style.backgroundColor = `rgb(${r},${g},${b})`;
     rightIcon.querySelector('.color_icon_nav').style.backgroundColor = `rgb(${r},${g},${b})`;
     iconColor.style.backgroundColor = `rgb(${r},${g},${b})`;
     let numColor = +`${r}${g}${b}`;
-    
+
     icon_url = findIconByColor(`${r}, ${g}, ${b}`);
-    
+
     iconColor.style.backgroundImage = `url(${icon_url})`;
 
 }
@@ -253,7 +251,27 @@ function setTitle(title) {
 }
 //click 
 
+const quotes = {
+    'webb' : ['Бабушка говорит, чай помогает при любых неприятностях','"Почему плачит русалка" Холли Вебб'],
+    'usachev': ['У каждого есть талант, просто не все могут его найти.','"Школа снеговиков" А.А. Усачев'] ,
+    'esenin': ['Есть что-то прекрасное в лете, А с летом прекрасное в нас.','"Стихотворения, поэмы (Сборник)"<br> С.А. Есенин'],
+    'block': ['Будет день — и свершится великое, Чую в будущем подвиг души.','"Будет день — и свершится великое..." А.А.Блок'],
+    'lermontov': ['Что то есть прекрасное в лете<br>А с летом прекрасное в нас','"Герои нашего времени" М.Ю. Лермонтов'],
+    'zaholder': ['Не вижу в этом большого смысла, - сказал Кролик. <br> - Нет, - сказал Пух скромно, - его тут нет. <br> Но он собирался тут быть, когда я начинал говорить. Очевидно, с ним что-то случилось по дороге.','"Винни-пух и Зачарованный лес" <br> Б.В. Заходер'],
+    'dostoevsciy': ['Человек он умный, но чтоб умно поступать — одного ума мало.','"Преступление и наказание" <br> Ф.М. Достоевский'],
+    'bulgakov': ['Тот, кто любит, должен разделять участь того, кого он любит.','"Мастер и Маргарита" М.А. Булгаков']
+}
 
+//quotes click 
+const quoteContainer = document.getElementById('quote_container');
+const quoteAuthor = document.getElementById('author_quote');
+
+function clickAuthor(author) {
+    quoteContainer.innerHTML = quotes[author][0];
+    quoteAuthor.innerHTML = quotes[author][1];
+
+    showQuotePopup();
+}
 
 function openTG() {
     // телеграм
