@@ -19,6 +19,8 @@
 
 html {
     overflow: hidden;
+    font-family: "SF Pro Display";
+
     -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   position: fixed;
@@ -35,7 +37,6 @@ body {
     background-color: #00000000;
     /*test back*/
 
-    font-family: "SF Pro Display";
 
 }
 
