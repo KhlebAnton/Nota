@@ -1,7 +1,14 @@
 @font-face {
     font-family: "SF Pro Display";
-    src: url('fonts/SF-Pro-Display-Regular.otf');
-    font-weight: normal;
+    src: 
+        local("SF Pro Display Regular"),
+        local("SFProDisplay-Regular"),
+        url('fonts/SF-Pro-Display-Regular.woff2') format('woff2'),
+        url('fonts/SF-Pro-Display-Regular.woff') format('woff'),
+        url('fonts/SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -12,7 +19,16 @@
 
 html {
     overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
 }
+
 
 body {
     height: 100vh;
@@ -100,8 +116,7 @@ body {
 }
 
 .image_instr {
-    min-height: 310px;
-    height: 55%;
+    height: 310px;
 }
 
 .image_1 {
@@ -278,6 +293,7 @@ body {
     transition: 0.3s;
     position: relative;
     width: 56px;
+    flex-shrink: 0;
     height: 56px;
     border-radius: 20px;
     background: url(img/check.svg) 50% 50% / 24px no-repeat, linear-gradient(85.33deg, #496BE3 0%, #3EB9FF 100%);
