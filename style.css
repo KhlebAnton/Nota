@@ -21,7 +21,7 @@
 html {
     /* overflow: hidden; */
     font-family: "SF Pro Display";
-
+    font-size: 16px;
   
   position: fixed;
   top: 0;
@@ -234,7 +234,7 @@ body {
     
 }
 .description_instr h1 {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0px;
@@ -245,7 +245,7 @@ body {
 .description_instr p {
     padding-top: 16px;
     width: 230px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0px;
@@ -317,14 +317,14 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #FFFFFF;
 
 
 }
 .scanning h1 {
     max-width: 300px;
-    font-size: 20px;
+    font-size: 1.25px;
     line-height: 24px;
     font-weight: 700;
     margin-top: 20px;
@@ -458,12 +458,12 @@ body {
     background-position: 50%;
 }
 #title_icon {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 20px;
 }
 #author_icon {
-    font-size: 14px;
+    font-size: 1.43rem;
     font-weight: 400;
     line-height: 20px;
     color: #868E9A;
@@ -568,7 +568,7 @@ body {
 }
 .logo_desc {
     color: #868E9A;
-    font-size: 14px;
+    font-size: 1.42rem;
     padding-left: 14px;
     width: 194px;
 }
@@ -578,7 +578,7 @@ body {
     background: linear-gradient(85.33deg, #496BE3 0%, #3EB9FF 100%);
 
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: 1.25rem;
    
     border-radius: 20px;
     justify-content: center;
@@ -591,7 +591,7 @@ body {
 }
 .btn_telegram {
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     border: 1px solid #496BE3;
@@ -621,7 +621,7 @@ body {
     
 }
 #click_popup h1 {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 24px;
 }
 .img_click_popup {
@@ -707,10 +707,10 @@ body {
     padding: 1em;
 
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;
 }
 .author_quote {
     margin-bottom: 28px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
 }
