@@ -15,14 +15,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+      -webkit-text-size-adjust: none;
 }
 
 html {
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: "SF Pro Display";
 
-    -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  
   position: fixed;
   top: 0;
   bottom: 0;
@@ -33,7 +33,7 @@ html {
 
 
 body {
-    height: 100vh;
+    height: 100%;
     background-color: #00000000;
     /*test back*/
 
