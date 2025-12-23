@@ -117,12 +117,14 @@ body {
 }
 
 .image_instr {
-    height: 310px;
+    max-height: 310px;
+    height: 100%;
 }
 
 .image_1 {
     background: url(img/logo_nota.svg) 50% 24px / contain no-repeat;
     height: 100%;
+    width: 100%;
 }
 .img_inst {
     height: 100%;
