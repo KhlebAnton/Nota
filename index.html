@@ -1,42 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    html {
-        width: 100%;
-        height: 100%;
 
-    }
-    .container {
-        position: fixed;
-        display: flex;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: #00000069;
-    }
-    .test-test {
-        width: 200px;
-        height: 200px;
-        font-size: 20px;
-        background-color: #ff0000;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-    }
-</style>
 <body>
-    <div class="container">
-        <div class="test-test">
-            Протсо текст
+    <div id="instruction" class="instruction">
+        <div class="instr_item">
+            <div class="image_instr">
+                <div class="img_inst">
+                    <div class="image_1"></div>
+                </div>
+                <div class="img_inst hidden">
+                    <div class="image_2">
+                        <div class="point_anim">
+                            <div class="point">
+                                <div class="point_icon"></div>
+                            </div>
+                            <div class="bubbls">
+                                <div class="bubbl small"></div>
+                                <div class="bubbl middle"></div>
+                                <div class="bubbl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="img_inst hidden">
+                    <div class="image_3"></div>
+                </div>
+            </div>
+            <div class="content_instr">
+                <div class="desc_container">
+                    <div class="description_instr ">
+                        <h1>Просканируйте<br> пространство</h1>
+                        <p> Медленно осмотри через камеру пространство вокруг себя.</p>
+                    </div>
+                    <div class="description_instr hidden">
+                        <h1>Следуйте <br>маршруту</h1>
+                        <p>Следуйте указателям на экране, чтобы добраться до нужной Вам книги.</p>
+                    </div>
+                    <div class="description_instr hidden">
+                        <h1>Поиск новой<br> книги</h1>
+                        <p>Для поиска новой книги
+                            повторите пердыдущие шаги.</p>
+                    </div>
+                </div>
+
+                <div class="footer_instr">
+                    <div class="slider_bar">
+                        <div class="slide activ"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                    </div>
+                    <div id="btn_instr_next" class="btn btn_next" ontouchstart></div>
+                    <div id="btn_instr_close" class="btn btn_close hidden" ontouchstart></div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <div id="check" class="check_screen hidden">
+        <div class="check"></div>
+    </div>
+
+
+    <div id="header_road" class="header_road hidden">
+        <div class="wrapper">
+            <div id="icon" class="color_icon"
+                style="background-image: url(img/icons/labirint.svg); background-color: rgb(88, 86, 214);"></div>
+            <div class="desc_icon">
+                <h2 id="title_icon">Кавказкий пленик</h2>
+            </div>
+        </div>
+        <div class="close_header" ontouchstart onclick="hideHeader()"></div>
+    </div>
+
+    <div id="footer_road" class="footer_road hidden">
+        <div class="info" onclick="showPopup('info_popup')" ontouchstar></div>
+        <div class="telegram" onclick="openTG()" ontouchstar></div>
+    </div>
+
+    <div id="info_popup" class="popup hidden">
+        <p class="desc">Данное приложение является навигатором в дополненной реальности по книжному фонду библиотеки
+            “Нота”</p>
+        <div class="logo_nota">
+            <div class="logo_img"></div>
+            <p class="logo_desc">Разработано при участии ЦБС
+                Красногвардейского района,
+                БКЦ «НОТА»</p>
+        </div>
+        <div class="btn_group">
+            <div class="btn_repeat" onclick="repeatInstr()" ontouchstart>Повторить инструкцию</div>
+            <div class="btn_telegram" onclick="openTG()" ontouchstart>Телеграм канал </div>
+        </div>
+    </div>
+
+
+
+    <div id="click_popup" class="popup hidden">
+        <div class="img_click_popup">
+
+        </div>
+
+        <h1>Попробуй найти всех писателей</h1>
+
+        <div class="btn_group">
+            <div class="btn_repeat" onclick="hideClickPopup()" ontouchstart>Продолжить</div>
+        </div>
+    </div>
+    <div id="quote_popup" class="popup hidden">
+        <div id="quote_container" class="quote_container">
+            Бабушка говорит, чай помогает при любых неприятностях
+        </div>
+
+        <div id="author_quote" class="author_quote">
+            “Почему плачет русалка”  Холли Вебб
+        </div>
+
+        <div class="btn_group">
+            <div class="btn_repeat" onclick="hideQuotePopup()" ontouchstart>Продолжить</div>
+        </div>
+    </div>
+    <div id="left_icon" class="icon_nav left_icon hidden">
+        <div class="arrow_icon left_arrow"></div>
+        <div class="container_icon_nav">
+            <div class="color_icon_nav" style="background-color: rgb(88, 86, 214);">                    
+            </div>
+        </div>
+    </div>
+    <div id="right_icon" class="icon_nav right_icon hidden">
+        <div class="arrow_icon right_arrow"></div>
+        <div class="container_icon_nav">
+            <div class="color_icon_nav" style="background-color: rgb(88, 86, 214);">                    
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="index.js"></script>
 </body>
+
 </html>
